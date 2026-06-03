@@ -35,7 +35,7 @@ table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px so
 <div id="matches"></div></div>
 <script>
 const SUPABASE_URL="https://nzsazngofmwhqmhquvee.supabase.co";
-const SUPABASE_ANON_KEY="sb_publishable_O4Jhk2-ENj-o5JjB0IoYRw_8aIdBX1s";
+const SUPABASE_ANON_KEY="eyJhbGci..._O4Jhk2-ENj-o5JjB0IoYRw_8aIdBX1s";
 const ADMIN_PIN="2026";
 let sb=null, participants=[], matches=[], predictions=[], isAdmin=false;
 if(!SUPABASE_URL.includes("PASTE_")){sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);document.getElementById("setup").classList.add("hidden");loadData();}

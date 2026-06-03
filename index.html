@@ -34,8 +34,8 @@ table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px so
 <div class="row"><input id="adminAdvancingTeam" placeholder="Lag vidare, vid slutspel"/><button onclick="updateResult()">Spara resultat</button></div></div></div>
 <div id="matches"></div></div>
 <script>
-const SUPABASE_URL="https://apupqptraibyaxetpwao.supabase.co";="https://nzsazngofmwhqmhquvee.supabase.co";
-const SUPABASE_ANON_KEY="sb_publishable_...";
+const SUPABASE_URL="https://apupqptraibyaxetpwao.supabase.co";
+const SUPABASE_ANON_KEY="sb_publishable_mAmVC1BhgCDW7VwsT7tnew_PjTfwna2...";
 const ADMIN_PIN="2026";
 let sb=null, participants=[], matches=[], predictions=[], isAdmin=false;
 if(!SUPABASE_URL.includes("PASTE_")){sb=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);document.getElementById("setup").classList.add("hidden");loadData();}

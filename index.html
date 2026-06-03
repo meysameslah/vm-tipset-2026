@@ -12,6 +12,8 @@ button.secondary{background:#555}button.danger{background:var(--red)}button.succ
 .hidden{display:none!important}.row{display:grid;grid-template-columns:1fr;gap:10px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .date-title{margin:22px 0 10px;color:var(--dark);border-left:5px solid var(--blue);padding-left:10px;font-size:21px}
 .teams{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;color:#0b3f78;font-weight:800;font-size:18px;line-height:1.25}
+
+  
 .team{display:flex;align-items:center;gap:7px}.team.away{justify-content:flex-end;text-align:right}.flag{font-size:25px}.vs{color:#777;font-size:15px}
 .meta{color:#666;font-size:13px;font-weight:700;margin:8px 0 12px}.tip-line{display:flex;gap:8px;justify-content:space-between;border-bottom:1px dashed #eee;padding:7px 0;font-size:14px}
 .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#eef3fb;color:#0b3f78;font-weight:700;font-size:12px}
@@ -20,17 +22,17 @@ button.secondary{background:#555}button.danger{background:var(--red)}button.succ
 .ai{background:var(--yellow);border:1px solid #ffe08a;border-radius:10px;padding:9px;font-size:14px;margin-bottom:10px}.admin{border:2px solid #203b78}
 table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px solid #eee;text-align:left;font-size:14px}th{background:#eef3fb}
 @media(min-width:760px){.controls{grid-template-columns:1fr 1fr 1fr 1fr}.row{grid-template-columns:1fr 1fr}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
-</style></head><body><header><h1>VM-Tipset 2026 âš½</h1><p>Alla ser varandras tips direkt. Tips lÃ¥ses efter matchstart.</p></header>
+</style></head><body><header><h1>VM-Tipset 2026 ⚽</h1><p>Alla ser varandras tips direkt. Tips läses efter matchstart.</p></header>
 <div class="container">
 <div id="setup" class="card"><b>Supabase saknas:</b> fyll i SUPABASE_URL och SUPABASE_ANON_KEY i koden.</div>
-<div class="controls"><select id="person"></select><select id="groupFilter"><option value="">Alla grupper</option></select><input id="search" placeholder="SÃ¶k lag/grupp..."/><button onclick="loadData()">Uppdatera</button></div>
+<div class="controls"><select id="person"></select><select id="groupFilter"><option value="">Alla grupper</option></select><input id="search" placeholder="Sök lag/grupp..."/><button onclick="loadData()">Uppdatera</button></div>
 <div class="card"><h2>Status</h2><div id="status">Laddar...</div></div>
 <div class="card"><button class="secondary" onclick="toggleAdmin()">Adminpanel</button></div>
 <div id="adminPanel" class="admin hidden"><h2>Adminpanel</h2><div class="row"><input id="adminPin" type="password" placeholder="Admin-PIN"/><button onclick="adminLogin()">Logga in</button></div>
 <div id="adminTools" class="hidden"><p><b>Admin aktiv.</b></p><div class="row"><select id="adminParticipant"></select><button class="danger" onclick="clearParticipant()">Rensa vald persons tips</button></div>
 <div class="row"><select id="adminMatch"></select><button class="danger" onclick="clearMatch()">Rensa vald match</button></div>
 <div class="row"><input id="adminStartTime" placeholder="Ny tid: 2026-06-11T18:00:00+02:00"/><button onclick="updateMatchTime()">Uppdatera tid</button></div>
-<div class="row"><input id="adminActualScore" placeholder="Slutresultat 2-1"/><select id="adminDecidedBy"><option>ordinarie tid</option><option>fÃ¶rlÃ¤ngning</option><option>straffar</option></select></div>
+<div class="row"><input id="adminActualScore" placeholder="Slutresultat 2-1"/><select id="adminDecidedBy"><option>ordinarie tid</option><option>Förlängning</option><option>straffar</option></select></div>
 <div class="row"><input id="adminAdvancingTeam" placeholder="Lag vidare, vid slutspel"/><button onclick="updateResult()">Spara resultat</button></div></div></div>
 <div id="matches"></div></div>
 <script>

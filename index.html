@@ -52,7 +52,12 @@ function renderMatches(){let q=document.getElementById("search").value.toLowerCa
   c.innerHTML="";
   let cur="";
   matches.filter(m=>(!g||m.group_name===g)&&`${m.home_team} ${m.away_team} ${m.group_name}`.toLowerCase().includes(q)).forEach(m=>{
-    let d=new Date(m.start_time).toLocaleDateString("sv-SE",{day:"numeric",month:"long",year:"numeric"});
+   let d=new Date(m.start_time).toLocaleDateString("sv-SE",{
+  timeZone:"Europe/Stockholm",
+  day:"numeric",
+  month:"long",
+  year:"numeric"
+});
     if(d!==cur){cur=d;c.insertAdjacentHTML("beforeend",`<h2 class="date-title">${d}</h2>`)}
     let my=predictions.find(x=>Number(x.match_id)===Number(m.id)&&Number(x.participant_id)===pid()), all=predictions.filter(x=>Number(x.match_id)===Number(m.id));
     let tips=all.length?all.map(x=>{let p=byId(participants,x.participant_id);return `<div class="tip-line"><span><b>${p?.name||"Okänd"}</b>: ${x.pick} • ${x.predicted_score}${x.advancing_team?" • Vidare: "+x.advancing_team:""}</span><span>${x.comment||""}</span></div>`}).join(""):"<p>Inga tips än.</p>";
